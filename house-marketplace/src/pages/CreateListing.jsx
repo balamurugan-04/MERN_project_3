@@ -14,8 +14,9 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function CreateListing() {
-  const [loading, setLoading] = useState(false);
+  // eslint-disable-next-line
   const [geoLocationEnabled, setGeoLocationEnabled] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     type: "rent",
@@ -67,6 +68,7 @@ function CreateListing() {
     return () => {
       isMounted.current = false;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMounted]);
 
   const onSubmit = async (e) => {
@@ -181,11 +183,11 @@ function CreateListing() {
   const onMutate = (e) => {
     let boolean = null;
 
-    if (e.target.value == "true") {
+    if (e.target.value === "true") {
       boolean = true;
     }
 
-    if (e.target.value == "false") {
+    if (e.target.value === "false") {
       boolean = false;
     }
 

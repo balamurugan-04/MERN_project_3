@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 // import { Helmet } from "react-helmet";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { getDoc, doc } from "firebase/firestore";
@@ -16,7 +15,7 @@ const Listing = () => {
   const [loading, setLoading] = useState(true);
   const [shareLinkCopied, setShareLinkCopied] = useState(false);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const params = useParams();
   const auth = getAuth();
 
@@ -33,7 +32,7 @@ const Listing = () => {
     };
 
     fetchListing();
-  }, []);
+  }, [params.listingId]);
 
   if (loading) {
     return <Spinner />;

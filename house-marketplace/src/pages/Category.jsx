@@ -6,7 +6,6 @@ import {
   where,
   orderBy,
   limit,
-  startAfter,
 } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { useEffect, useState } from "react";
@@ -52,7 +51,7 @@ const Category = () => {
     };
 
     fetchListings();
-  }, []);
+  }, [params.categoryName]);
   return (
     <div className="category">
       <header>
