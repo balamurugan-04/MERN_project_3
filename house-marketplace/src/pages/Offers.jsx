@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom";
 import {
   collection,
   getDocs,
@@ -6,7 +5,6 @@ import {
   where,
   orderBy,
   limit,
-  startAfter,
 } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { useEffect, useState } from "react";
